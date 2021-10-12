@@ -1,6 +1,6 @@
 import React from "react";
 import "../components/Card.css";
-export default function Card({ min, max, name, img, onClose, id }) {
+export default function Card({ min, max, name }) {
   return (
     <div className="card">
       <div className="container">
@@ -12,11 +12,11 @@ export default function Card({ min, max, name, img, onClose, id }) {
           <div className="row">
             <div className="col-sm-4 col-md-4 col-lg-4">
               <p>Min</p>
-              <p>{min - 273.15}°C</p>
+              <p>{min}°C</p>
             </div>
             <div className="col-sm-4 col-md-4 col-lg-4">
               <p>Max</p>
-              <p>{max - 273.15}°C</p>
+              <p>{max}°C</p>
             </div>
             <div className="col-sm-4 col-md-4 col-lg-4">
               <img src="" width="80" height="80" alt="" />

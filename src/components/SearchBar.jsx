@@ -1,7 +1,18 @@
-export default function SearchBar() {
+import React, { useState } from "react";
+export default function SearchBar({ onSearch }) {
+  const [city, setCity] = useState("");
   return (
-    <form>
-      <input type="text" placeholder="Ciudad..." />
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSearch(city);
+      }}
+    >
+      <input
+        type="text"
+        placeholder="Ciudad..."
+        onChange={(e) => setCity(e.target.value)}
+      />
 
       <input type="submit" value="+" />
     </form>
