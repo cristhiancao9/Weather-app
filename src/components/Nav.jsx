@@ -1,3 +1,4 @@
+import SearchBar from "./SearchBar";
 import React from "react";
 function Nav() {
   return (
@@ -5,6 +6,7 @@ function Nav() {
       <div>
         <h1>Weather App</h1>
       </div>
+      <SearchBar />
     </nav>
   );
 }
