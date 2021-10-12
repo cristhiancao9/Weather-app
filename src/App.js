@@ -29,7 +29,18 @@ function App() {
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon,
           };
-          setCities((oldCities) => [...oldCities, ciudad]);
+          let found = false;
+          for (let i = 0; i < cities.length; i++) {
+            if (cities[i].name === ciudad.name) {
+              found = true;
+              break;
+            }
+          }
+          if (found) {
+            alert("Selecciona otra ciudad");
+          } else {
+            setCities((oldCities) => [...oldCities, ciudad]);
+          }
         } else {
           alert("Ciudad no encontrada");
         }
