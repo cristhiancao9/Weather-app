@@ -6,6 +6,9 @@ import Cards from "./components/Cards.jsx";
 function App() {
   const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
   const [cities, setCities] = useState([]);
+  function onClose(id) {
+    setCities((oldCities) => oldCities.filter((c) => c.id !== id));
+  }
   function onSearch(ciudad) {
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`
@@ -36,7 +39,7 @@ function App() {
     <div className="App">
       <Nav onSearch={onSearch} />
       <div>
-        <Cards cities={cities}></Cards>
+        <Cards cities={cities} onClose={onClose}></Cards>
       </div>
     </div>
   );

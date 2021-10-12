@@ -1,11 +1,13 @@
 import React from "react";
 import "../components/Card.css";
-export default function Card({ min, max, name }) {
+export default function Card({ min, max, name, img, onClose }) {
   return (
     <div className="card">
       <div className="container">
         <div id="closeIcon" className="row">
-          <button className="btn btn-sm btn-danger">X</button>
+          <button onClick={onClose} className="btn btn-sm btn-danger">
+            X
+          </button>
         </div>
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
@@ -19,7 +21,12 @@ export default function Card({ min, max, name }) {
               <p>{max}°C</p>
             </div>
             <div className="col-sm-4 col-md-4 col-lg-4">
-              <img src="" width="80" height="80" alt="" />
+              <img
+                src={"http://openweathermap.org/img/wn/" + img + "@2x.png"}
+                width="80"
+                height="80"
+                alt=""
+              />
             </div>
           </div>
         </div>
