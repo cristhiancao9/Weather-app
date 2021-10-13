@@ -1,5 +1,6 @@
 import React from "react";
 import "../components/Card.css";
+import Clock from "./Time";
 export default function Card({ min, max, name, img, onClose }) {
   return (
     <div className="card">
@@ -23,10 +24,13 @@ export default function Card({ min, max, name, img, onClose }) {
             <div className="col-sm-4 col-md-4 col-lg-4">
               <img
                 src={"http://openweathermap.org/img/wn/" + img + "@2x.png"}
-                width="80"
-                height="80"
+                width="90"
+                height="90"
                 alt=""
               />
+            </div>
+            <div>
+              <Clock></Clock>
             </div>
           </div>
         </div>

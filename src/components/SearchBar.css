@@ -7,7 +7,8 @@
   background-image: none !important;
   background: transparent !important;
   border: none !important;
-  font-style: italic;
+  font-family: "Roboto", "Times New Roman", Times, serif;
+  font-size: large;
 }
 .add {
   opacity: 0.7;
