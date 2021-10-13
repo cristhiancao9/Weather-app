@@ -1,12 +1,10 @@
 import SearchBar from "./SearchBar";
+import "./Nav.css";
 import React from "react";
-function Nav() {
+function Nav({ onSearch }) {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div>
-        <h1>Weather App</h1>
-      </div>
-      <SearchBar />
+    <nav className="espacios">
+      <SearchBar onSearch={onSearch} />
     </nav>
   );
 }
