@@ -5,7 +5,7 @@ export default function Card({ min, max, name, img, onClose }) {
     <div className="card">
       <div className="container">
         <div id="closeIcon" className="row">
-          <button onClick={onClose} className="btn btn-sm btn-danger">
+          <button onClick={onClose} className="btn">
             X
           </button>
         </div>
