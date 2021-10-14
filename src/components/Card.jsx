@@ -10,9 +10,7 @@ export default function Card({ min, max, name, img, onClose }) {
             X
           </button>
         </div>
-        <h1 className={Style.espaciosMinMax} className={Style.colorTitulo}>
-          {name}
-        </h1>
+        <h1 className={Style.espaciosMinMax}>{name}</h1>
         <div className={Style.maxMin}>
           <div>
             <h4 className={Style.espaciosMinMax}>Min</h4>
