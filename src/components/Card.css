@@ -6,8 +6,8 @@
 
 .container {
   margin: 20px;
-  width: 24rem;
-  height: 24rem;
+  width: 25rem;
+  height: 25rem;
   border-radius: 0.7rem;
   background: none;
   color: aliceblue;
@@ -27,8 +27,8 @@
   margin-top: 3rem;
 }
 .tamañoImg {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
 }
 .espaciosMinMax {
   padding-top: 2rem;
