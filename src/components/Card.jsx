@@ -25,7 +25,7 @@ export default function Card({ min, max, name, img, onClose }) {
           <div>
             <img
               className={Style.tamañoImg}
-              src={"http://openweathermap.org/img/wn/" + img + "@2x.png"}
+              src={"https://openweathermap.org/img/wn/" + img + "@2x.png"}
               alt=""
             />
           </div>
