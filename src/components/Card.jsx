@@ -1,7 +1,7 @@
 import React from "react";
 import Style from "../components/Card.module.css";
 /* import Clock from "./Time"; */
-export default function Card({ min, max, name, img, onClose }) {
+export default function Card({ min, max, name, imge, onClose }) {
   return (
     <div className={Style.principal}>
       <div className={Style.container}>
@@ -10,7 +10,9 @@ export default function Card({ min, max, name, img, onClose }) {
             X
           </button>
         </div>
-        <h1 className={Style.espaciosMinMax}>{name}</h1>
+        <h1 className={Style.espaciosMinMax} className={Style.colorTitulo}>
+          {name}
+        </h1>
         <div className={Style.maxMin}>
           <div>
             <h4 className={Style.espaciosMinMax}>Min</h4>
@@ -23,7 +25,7 @@ export default function Card({ min, max, name, img, onClose }) {
           <div>
             <img
               className={Style.tamañoImg}
-              src={"https://openweathermap.org/img/wn/" + img + "@2x.png"}
+              src={"https://openweathermap.org/img/wn/" + imge + "@2x.png"}
               alt=""
             />
           </div>
