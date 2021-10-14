@@ -28,6 +28,7 @@ function App() {
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon,
+            timeZone: recurso.timezone,
           };
           let found = false;
           for (let i = 0; i < cities.length; i++) {

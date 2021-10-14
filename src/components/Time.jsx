@@ -1,24 +1,35 @@
-import React from "react";
-class Clock extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: new Date().toLocaleString(),
-    };
-  }
-  componentDidMount() {
-    this.intervalID = setInterval(() => this.tick(), 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.intervalID);
-  }
-  tick() {
+import React, { Component } from "react";
+
+export default class Clock extends Component {
+  state = {
+    date: new Date(new Date().getTime() + this.props.timeZone * 1000)
+      .toUTCString()
+      .replace(/ GMT$/, ""),
+  };
+
+  timeRefresh() {
     this.setState({
-      time: new Date().toLocaleString(),
+      date: new Date(new Date().getTime() + this.props.timeZone * 1000)
+        .toUTCString()
+        .replace(/ GMT$/, ""),
     });
   }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => {
+      this.timeRefresh();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
   render() {
-    return <p className="App-clock">{this.state.time}.</p>;
+    return (
+      <div>
+        <span>{this.state.date}</span>
+      </div>
+    );
   }
 }
-export default Clock;

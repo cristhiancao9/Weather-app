@@ -1,6 +1,6 @@
 import React from "react";
 import "../components/Card.css";
-/* import Clock from "./Time"; */
+import Clock from "./Time";
 export default function Card({
   min,
   max,
@@ -10,6 +10,7 @@ export default function Card({
   wind,
   temp,
   weather,
+  timeZone,
 }) {
   return (
     <div className="principal">
@@ -20,7 +21,7 @@ export default function Card({
           </button>
         </div>
         <h1 className="espaciosMinMax">{name}</h1>
-
+        <Clock timeZone={timeZone} />
         <div className="maxMin">
           <div>
             <h4>Min</h4>
@@ -31,7 +32,6 @@ export default function Card({
           <div>
             <h4>Max</h4>
             <h6 className="espaciosMinMax2">{max}ºC</h6>
-            {/*  <h4>Prom</h4> */}
             <h4 className="tempPro">{weather}</h4>
           </div>
           <div>
