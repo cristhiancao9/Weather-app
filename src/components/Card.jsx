@@ -1,37 +1,33 @@
 import React from "react";
-import "../components/Card.css";
-import Clock from "./Time";
+import Style from "../components/Card.module.css";
+/* import Clock from "./Time"; */
 export default function Card({ min, max, name, img, onClose }) {
   return (
-    <div className="card">
-      <div className="container">
-        <div id="closeIcon" className="row">
-          <button onClick={onClose} className="btn">
+    <div className={Style.principal}>
+      <div className={Style.container}>
+        <div className={Style.btnDiv}>
+          <button className={Style.xBtn} onClick={onClose}>
             X
           </button>
         </div>
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <div className="row">
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <p>Min</p>
-              <p>{min}°C</p>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <p>Max</p>
-              <p>{max}°C</p>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <img
-                src={"http://openweathermap.org/img/wn/" + img + "@2x.png"}
-                width="90"
-                height="90"
-                alt=""
-              />
-            </div>
-            <div>
-              <Clock></Clock>
-            </div>
+        <h1 className={Style.espaciosMinMax} className={Style.colorTitulo}>
+          {name}
+        </h1>
+        <div className={Style.maxMin}>
+          <div>
+            <h4 className={Style.espaciosMinMax}>Min</h4>
+            <h4 className={Style.espaciosMinMax}>{min}ºC</h4>
+          </div>
+          <div>
+            <h4 className={Style.espaciosMinMax}>Max</h4>
+            <h4 className={Style.espaciosMinMax}>{max}ºC</h4>
+          </div>
+          <div>
+            <img
+              className={Style.tamañoImg}
+              src={"http://openweathermap.org/img/wn/" + img + "@2x.png"}
+              alt=""
+            />
           </div>
         </div>
       </div>
