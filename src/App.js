@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Nav from "./components/Nav.jsx";
 import "./App.css";
 import Cards from "./components/Cards.jsx";
-
+import "./components/style.css";
 function App() {
   const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
   const [cities, setCities] = useState([]);
@@ -49,6 +49,11 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
+      <div class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+      </div>
       <div>
         <Cards cities={cities} onClose={onClose}></Cards>
       </div>
