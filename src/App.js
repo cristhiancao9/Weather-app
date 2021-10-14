@@ -26,8 +26,6 @@ function App() {
             name: recurso.name,
             weather: recurso.weather[0].main,
             clouds: recurso.clouds.all,
-            latitud: recurso.coord.lat,
-            longitud: recurso.coord.lon,
             timeZone: recurso.timezone,
           };
           let found = false;
