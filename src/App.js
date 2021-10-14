@@ -26,8 +26,6 @@ function App() {
             name: recurso.name,
             weather: recurso.weather[0].main,
             clouds: recurso.clouds.all,
-            latitud: recurso.coord.lat,
-            longitud: recurso.coord.lon,
             timeZone: recurso.timezone,
           };
           let found = false;
@@ -50,7 +48,7 @@ function App() {
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <div class="wrapper">
+      <div className="wrapper">
         <div id="stars"></div>
         <div id="stars2"></div>
         <div id="stars3"></div>

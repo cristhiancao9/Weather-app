@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class Clock extends Component {
+class Clock extends Component {
   state = {
     date: new Date(new Date().getTime() + this.props.timeZone * 1000)
       .toUTCString()
@@ -33,3 +33,4 @@ export default class Clock extends Component {
     );
   }
 }
+export default Clock;
