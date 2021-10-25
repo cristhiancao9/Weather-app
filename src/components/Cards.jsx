@@ -16,6 +16,7 @@ export default function Cards({ cities, onClose }) {
             wind={elemento.wind}
             temp={elemento.temp}
             timeZone={elemento.timeZone}
+            id={elemento.id}
             onClose={() => onClose(elemento.id)}
           />
         ))}
