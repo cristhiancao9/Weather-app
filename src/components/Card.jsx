@@ -1,6 +1,8 @@
 import React from "react";
 import "../components/Card.css";
 import Clock from "./Time";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 export default function Card({
   min,
   max,
@@ -11,7 +13,13 @@ export default function Card({
   temp,
   weather,
   timeZone,
+  id,
 }) {
+  useEffect(() => {
+    document.body.style.background =
+      "url('https://images8.alphacoders.com/650/thumb-1920-650686.jpg') no-repeat center center fixed";
+    document.body.style.backgroundSize = "cover";
+  });
   return (
     <div className="principal">
       <div className="container">
@@ -20,7 +28,10 @@ export default function Card({
             X
           </button>
         </div>
-        <h1 className="espaciosMinMax">{name}</h1>
+        <Link to={`/ciudad/${id}`}>
+          <h1 className="espaciosMinMax">{name}</h1>
+        </Link>
+
         <Clock timeZone={timeZone} />
         <div className="maxMin">
           <div>

@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import Nav from "./components/Nav.jsx";
 import "./App.css";
 import Cards from "./components/Cards.jsx";
+import { Switch, Route } from "react-router";
 import "./components/style.css";
+import Starts from "./components/Starts.jsx";
+import Ciudad from "./components/Ciudad.jsx";
 function App() {
   const apiKey = "4ae2636d8dfbdc3044bede63951a019b";
   const [cities, setCities] = useState([]);
@@ -17,16 +20,18 @@ function App() {
       .then((recurso) => {
         if (recurso.main !== undefined) {
           const ciudad = {
-            min: Math.round(recurso.main.temp_min),
-            max: Math.round(recurso.main.temp_max),
+            min: recurso.main.temp_min.toFixed(1),
+            max: recurso.main.temp_max.toFixed(1),
             img: recurso.weather[0].icon,
             id: recurso.id,
             wind: recurso.wind.speed,
-            temp: recurso.main.temp,
+            temp: recurso.main.temp.toFixed(1),
             name: recurso.name,
             weather: recurso.weather[0].main,
             clouds: recurso.clouds.all,
             timeZone: recurso.timezone,
+            latitud: recurso.coord.lat.toFixed(1),
+            longitud: recurso.coord.lon.toFixed(1),
           };
           let found = false;
           for (let i = 0; i < cities.length; i++) {
@@ -45,16 +50,31 @@ function App() {
         }
       });
   }
+  function onFilter(ciudadId) {
+    console.log(ciudadId);
+    let ciudad = cities.filter((c) => c.id === parseInt(ciudadId));
+    if (ciudad.length > 0) {
+      return ciudad[0];
+    } else {
+      return null;
+    }
+  }
   return (
     <div className="App">
       <Nav onSearch={onSearch} />
-      <div className="wrapper">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-      </div>
+      <Switch>
+        <Route path="/cards">
+          <Cards cities={cities} onClose={onClose} />
+        </Route>
+        <Route
+          path="/ciudad/:ciudadId"
+          render={({ match }) => (
+            <Ciudad city={onFilter(match.params.ciudadId)} />
+          )}
+        />
+      </Switch>
       <div>
-        <Cards cities={cities} onClose={onClose}></Cards>
+        <Starts></Starts>
       </div>
     </div>
   );
