@@ -4,14 +4,14 @@ import { useEffect } from "react";
 export default function Ciudad({ city }) {
   useEffect(() => {
     document.body.style.background =
-      "url('https://c.wallhere.com/photos/11/00/space_Earth_atmosphere_eclipse_nature_river_desert_Jon_Carmichael-1474035.jpg!d')no-repeat center center fixed";
+      "url('https://data.1freewallpapers.com/download/storm-waves-sea-moon-night-art-1680x1050.jpg')no-repeat center center fixed";
     document.body.style.backgroundSize = "cover";
   });
   return (
     <div className="ciudad">
       <div className="container2">
         <div className="principal-ciu">
-          <h2>{city.name}</h2>
+          <h1 className="titulo">{city.name}</h1>
           <div className="img-clima">
             <img
               className="tamañoImg"
