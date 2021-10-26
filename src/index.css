@@ -10,7 +10,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("https://images8.alphacoders.com/650/thumb-1920-650686.jpg")
+  /*   background: url("https://images8.alphacoders.com/650/thumb-1920-650686.jpg")
+    no-repeat center center fixed; */
+  background: url("https://www.xtrafondos.com/wallpapers/resoluciones/15/el-mar-y-la-luna_1280x720_474.jpg")
     no-repeat center center fixed;
   width: 100%;
   height: 100%;

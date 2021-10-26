@@ -17,7 +17,7 @@ export default function Card({
 }) {
   useEffect(() => {
     document.body.style.background =
-      "url('https://images8.alphacoders.com/650/thumb-1920-650686.jpg') no-repeat center center fixed";
+      "url('https://www.xtrafondos.com/wallpapers/resoluciones/15/el-mar-y-la-luna_1280x720_474.jpg') no-repeat center center fixed";
     document.body.style.backgroundSize = "cover";
   });
   return (

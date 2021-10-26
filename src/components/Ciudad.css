@@ -58,3 +58,6 @@
   flex-direction: column;
   margin-left: 2rem;
 }
+.titulo {
+  padding-top: 1rem;
+}

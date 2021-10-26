@@ -20,3 +20,6 @@
   background: transparent !important;
   border: none !important;
 }
+::placeholder {
+  color: white;
+}
